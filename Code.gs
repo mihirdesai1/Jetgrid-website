@@ -9,7 +9,7 @@
 // ===== CONFIG — UPDATE THESE =====
 var CONFIG = {
   // Google Sheet ID — get from the URL: docs.google.com/spreadsheets/d/THIS_PART/edit
-  SHEET_ID: 'PASTE_YOUR_SHEET_ID_HERE',
+  SHEET_ID: '13BWt1226ES-cY9OZcpQIVOoGuTFu51DgwxKdSSXocBc',
   
   // Sheet tab name
   SHEET_NAME: 'Leads',
