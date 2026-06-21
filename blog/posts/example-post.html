@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above the Clouds, Below the Radar — JetGrid Journal</title>
+<meta name="description" content="What it means to move through India without the noise — and why more high-net-worth travelers are choosing private over first class.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#0A1628;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:68px;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.08)}
+.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-family:'DM Sans',sans-serif;font-weight:400;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#6B7A8D;text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:#0A1628}
+.nav-cta{background:#0A1628;color:#fff !important;padding:10px 24px;font-size:9px !important;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;transition:background .3s}
+.nav-cta:hover{background:#112240 !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{width:22px;height:1px;background:#0A1628;transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;left:0;width:100%;height:100%;background:#0A1628;z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity .4s}
+.mobile-menu.open{opacity:1;pointer-events:all}
+.mobile-menu a{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#fff;text-decoration:none;letter-spacing:2px;transition:color .3s}
+.mobile-menu a:hover{color:rgba(255,255,255,.6)}
+
+/* HERO IMAGE */
+.post-hero{width:100%;height:60vh;min-height:320px;overflow:hidden;margin-top:68px}
+.post-hero img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%)}
+
+/* POST BODY */
+.post-wrap{max-width:680px;margin:0 auto;padding:56px 24px 100px}
+.post-back{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#6B7A8D;text-decoration:none;margin-bottom:48px;transition:color .3s}
+.post-back:hover{color:#0A1628}
+.post-back::before{content:'←';font-size:12px}
+.post-eyebrow{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#6B7A8D;margin-bottom:16px}
+.post-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:600;color:#0A1628;line-height:1.1;margin-bottom:20px}
+.post-date{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#6B7A8D;padding-bottom:32px;border-bottom:1px solid rgba(0,0,0,.08);margin-bottom:40px}
+.post-body{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.8;color:#1a2a3a}
+.post-body p{margin-bottom:24px}
+.post-body h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#0A1628;margin:48px 0 16px;letter-spacing:.5px}
+.post-body blockquote{border-left:2px solid #0A1628;padding-left:24px;margin:32px 0;font-style:italic;color:#4A5E7A}
+
+/* FOOTER */
+.footer{background:#0A1628;padding:60px 5% 32px}
+.footer-top{display:flex;align-items:baseline;gap:16px;margin-bottom:36px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;letter-spacing:4px;color:#F4F1EA;text-transform:uppercase}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:rgba(244,241,234,.5)}
+.footer-nav{display:flex;gap:32px;margin-bottom:28px;flex-wrap:wrap}
+.footer-nav a{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4A5E7A;text-decoration:none;transition:color .3s}
+.footer-nav a:hover{color:#F4F1EA}
+.footer-divider{height:1px;background:rgba(255,255,255,.08);margin:0 0 28px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom-left,.footer-bottom-right{font-family:'DM Sans',sans-serif;font-size:11px;color:#2A3A50}
+.footer-legal{font-family:'DM Sans',sans-serif;font-size:10px;color:#2A3A50;line-height:1.7;margin-top:20px;max-width:680px}
+
+@media(max-width:600px){
+  .nav-links{display:none}.hamburger{display:flex}
+  .nav{padding:0 20px}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <a class="nav-logo" href="/index.html"><img src="/assets/logo/jetgrid-logo-black-transparent.png" alt="JetGrid" style="height:40px;width:auto;display:block;"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="/index.html#charter">Charter</a>
+    <a href="/index.html#jetcard">Jet Card</a>
+    <a href="/index.html#fleet">Fleet</a>
+    <a href="/index.html#empty-legs">Empty Legs</a>
+    <a href="/index.html#about">About</a>
+    <a href="/blog/blog.html">Journal</a>
+    <a href="/index.html#contact" class="nav-cta">Fly Now</a>
+  </div>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/index.html#charter" onclick="closeMobileMenu()">Charter</a>
+  <a href="/index.html#jetcard" onclick="closeMobileMenu()">Jet Card</a>
+  <a href="/index.html#fleet" onclick="closeMobileMenu()">Fleet</a>
+  <a href="/index.html#empty-legs" onclick="closeMobileMenu()">Empty Legs</a>
+  <a href="/index.html#about" onclick="closeMobileMenu()">About</a>
+  <a href="/blog/blog.html" onclick="closeMobileMenu()">Journal</a>
+  <a href="/index.html#contact" onclick="closeMobileMenu()">Fly Now</a>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="post-hero">
+  <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80" alt="Private aircraft in flight">
+</div>
+
+<!-- POST CONTENT -->
+<article class="post-wrap">
+  <a class="post-back" href="/blog/blog.html">Back to Journal</a>
+  <div class="post-eyebrow">Charter &nbsp;·&nbsp; June 2026</div>
+  <h1 class="post-title">Above the Clouds, Below the Radar</h1>
+  <div class="post-date">June 15, 2026</div>
+  <div class="post-body">
+    <p>There is a particular kind of silence that only exists at 41,000 feet — not the silence of absence, but the silence of everything irrelevant falling away. No queues. No announcements. No middle seat. Just the curvature of the horizon and the knowledge that you are, for the next hour, completely unreachable in the best possible sense.</p>
+
+    <p>This is what private aviation feels like. And it is why, across India, a growing number of business leaders, entrepreneurs, and families are choosing it not as a luxury — but as a discipline of time.</p>
+
+    <h2>The Real Cost of Commercial</h2>
+
+    <p>We rarely count the true cost of a commercial flight. The two-hour buffer. The check-in. The security queue that moves at its own sovereign pace. The connection that exists on paper but not in practice. The seat that reclines into your lap. The taxi queue at the other end.</p>
+
+    <p>Add it up, and a ninety-minute flight between Mumbai and Hyderabad costs you a day. Private aviation gives that day back. Departure from a private terminal, no security theatre, direct to your destination — or to a smaller airstrip closer to where you actually need to be.</p>
+
+    <blockquote>"The aircraft waits for you. Not the other way around."</blockquote>
+
+    <p>That reversal — subtle, profound — changes how you think about distance. Cities that felt far begin to feel adjacent. A morning meeting in Delhi and an evening dinner in Bangalore stops being a fantasy and becomes a Tuesday.</p>
+
+    <h2>Privacy as a Feature, Not a Perk</h2>
+
+    <p>For many of JetGrid's clients, privacy is not an indulgence — it is a requirement. Board-level conversations cannot happen in row 14. Due-diligence calls do not belong in a crowded lounge. The confidentiality that a private cabin provides is structural, not incidental.</p>
+
+    <p>Every operator in JetGrid's network signs a confidentiality agreement. Your manifest, your route, your companions — none of it moves beyond the people who need to know.</p>
+
+    <h2>What This Actually Costs</h2>
+
+    <p>Less than most people assume. A light jet between two Indian cities can run between ₹3–5 lakh for a sector — split across four or five passengers, the economics shift considerably. Empty leg flights, where aircraft reposition between charters, can be booked at significant discounts and offer the same aircraft, the same crew, the same silence.</p>
+
+    <p>JetGrid's Jet Card goes further: purchase flying hours at a fixed rate, with an aircraft always available on short notice. No surge pricing. No availability uncertainty. Just flight, when you need it.</p>
+
+    <p>The question is not whether private aviation is worth it. The question is whether your time is.</p>
+  </div>
+</article>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <span class="footer-logo">JETGRID</span>
+    <span class="footer-tagline">This high, even time moves out of your way.</span>
+  </div>
+  <div class="footer-nav">
+    <a href="/index.html#charter">Charter</a>
+    <a href="/index.html#jetcard">Jet Card</a>
+    <a href="/index.html#fleet">Fleet</a>
+    <a href="/index.html#empty-legs">Empty Legs</a>
+    <a href="/index.html#about">About</a>
+    <a href="/index.html#contact">Contact</a>
+    <a href="/blog/blog.html">Journal</a>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">© 2026 JetGrid India Private Limited</div>
+    <div class="footer-bottom-right"><a href="mailto:info@jetgrid.in" style="color:#4A5E7A;text-decoration:none">info@jetgrid.in</a></div>
+  </div>
+  <p class="footer-legal">All flights are operated by DGCA-compliant NSOP holders. Aircraft and crew are provided by licensed operators.</p>
+</footer>
+
+<script>
+var hamburger=document.getElementById('hamburger');
+var mobileMenu=document.getElementById('mobileMenu');
+function closeMobileMenu(){hamburger.classList.remove('open');mobileMenu.classList.remove('open')}
+hamburger.addEventListener('click',function(){hamburger.classList.toggle('open');mobileMenu.classList.toggle('open')});
+</script>
+</body>
+</html>
